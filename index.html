@@ -1,231 +1,298 @@
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bright Smiles Dental</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+   * {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Lexend', 'Noto Sans', sans-serif;
+      
+    }
+    .scroll-hint {
+      animation: bounce 1.5s infinite;
+      cursor: pointer;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(12px); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <header id="main-navbar"
+          class="fixed top-0 left-0 w-full z-50 transition-all duration-300 navbar-transparent bg-white bg-opacity-90 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-6 md:px-10 lg:px-20 flex items-center justify-between py-4">
+      <!-- Logo + Title -->
+      <a href="#" class="flex items-center space-x-2">
+        <svg class="w-8 h-8 text-blue-600" viewBox="0 0 48 48" fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" />
+        </svg>
+        <h1 class="text-xl font-bold text-gray-900">Bright Smiles Dental</h1>
+      </a>
 
-    <title>Dental</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+      <!-- Nav Links (desktop only) -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="#home" class="text-gray-700 font-medium hover:text-blue-600 transition">Home</a>
+        <a href="#services" class="text-gray-700 font-medium hover:text-blue-600 transition">Services</a>
+        <a href="#contact" class="text-gray-700 font-medium hover:text-blue-600 transition">Contact</a>
+      </nav>
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <style>
-      .navbar-transparent {
-        background: transparent;
-        border-bottom: none;
-        transition: background 0.3s, border-bottom 0.3s;
-      }
-      .navbar-solid {
-        background: #fff;
-        border-bottom: 1px solid #f0f3f4;
-        transition: background 0.3s, border-bottom 0.3s;
-      }
-      .scroll-hint {
-        position: absolute;
-        left: 50%;
-        bottom: 32px;
-        transform: translateX(-50%);
-        z-index: 10;
-        animation: bounce 1.5s infinite;
-        pointer-events: none;
-      }
-      @keyframes bounce {
-        0%, 100% { transform: translateX(-50%) translateY(0); }
-        50% { transform: translateX(-50%) translateY(12px); }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Lexend, "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-        <header id="main-navbar" class="navbar-transparent fixed top-0 left-0 w-full z-50 flex items-center justify-between whitespace-nowrap px-10 py-3">
-          <div class="flex items-center gap-4 text-[#111518]">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path></svg>
-            </div>
-            <h2 class="text-[#111518] text-lg font-bold leading-tight tracking-[-0.015em]">Bright Smiles Dental</h2>
-          </div>
-          <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
-              <a class="text-[#111518] text-sm font-medium leading-normal" href="#">Home</a>
-              <a class="text-[#111518] text-sm font-medium leading-normal" href="#">Services</a>
-              <a class="text-[#111518] text-sm font-medium leading-normal" href="#">Contact</a>
-            </div>
-            <button
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#1993e5] text-white text-sm font-bold leading-normal tracking-[0.015em]"
-            >
-              <span class="truncate">Book Appointment</span>
-            </button>
-          </div>
-        </header>
-        <div class="relative">
-          <section id="hero" class="flex min-h-screen flex-col justify-end items-start bg-cover bg-center bg-no-repeat px-4 pb-10 @[480px]:px-10 gap-6 @[480px]:gap-8 @[480px]:rounded-xl" style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBU5ruqfOj-UH6JvRgdFY-m9xy1FAs0ItCEEVe2jubzdOWZbWQ_zI6qeB9n6zTIN9RMo7WVC6UkhNiKYqfAi_4XO1kDunoV9CyXLHPLl9wIO-eX8HPGcZdH0eWpny6XbbvA5lKu1AVfFyH4eCkf1B1jIbGYZjesT_Gc5JFL2vv1ECk9ieqRkpTY44Mgo1Z2V8bT9rwcKsQ1IFXQSe9y3WDSsWvH5Kn-JKnRarOf5FkxTk9w_nMIpoZZmgDVHCtElF9PkkX0bDhlICFK");'>
-            <div class="flex flex-col gap-2 text-left">
-              <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
-                Your Journey to a Healthier Smile Starts Here
-              </h1>
-              <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                At Bright Smiles Dental, we are committed to providing exceptional dental care in a comfortable and welcoming environment. Our experienced team utilizes the latest technology to ensure your visit is efficient and effective.
-              </h2>
-            </div>
-            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1993e5] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-              <span class="truncate">Book Appointment</span>
-            </button>
-            <div class="scroll-hint" id="scroll-hint" style="cursor:pointer;">
-              <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg>
-            </div>
-          </section>
-        </div>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <h2 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Our Services</h2>
-            <div class="flex overflow-x-auto flex-nowrap gap-3 [-ms-scrollbar-style:auto] [scrollbar-width:auto] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:bg-[#dce1e5] [&::-webkit-scrollbar-thumb]:rounded-full px-4">
-              <div class="flex items-stretch gap-3">
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4X3VVZU78mzfpX1u7Mvi9MVmi2_Eev0Na0Nj1yTD3uRX7iJ12NyfjCGc8tg7WzQNBgp0dNU_Q_SyVC7_EzdwVihRB2Ywf7wDUS6jnNwHhwaOI3TvZ6gxR0ao-DDGtKI4AtPst535Mjr2j7dZ5ps2w3v9DRzRv44pQAFW2QkkmmhQcsWvIJKBUpSXYmOSwgJQT_lm6oNOZzJB3A9wSb4gbFhwC2mn2wAbN0osJDCLNpaeswgT0EL42y4uVmQ7c6l-ld--F4eSTfuXs");'
-                  ></div>
-                  <div>
-                    <p class="text-[#111518] text-base font-medium leading-normal">General Dentistry</p>
-                    <p class="text-[#637988] text-sm font-normal leading-normal">Routine check-ups, cleanings, and fillings to maintain your oral health.</p>
-                  </div>
-                </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbhoFPwBP2xDBB54l2Fk7EtqkWyo9PM39G6jMhJaBEzuP49P6rMLC3iPYPcJ_sa6STrorsxCFaqqhPdGM5Vjdz3PVjt3MMrUXy5Spki6MAEskF_o3kIlWDvMahtr264ow0N7_s-W9-TFLrq0aHLobgtYPWA6XudviVmTWJSYLKihiMQEM9o8hf1ZhUuv1IGoYG1HPP8qGcpfDHPnkxBWYgqNMxbGdwFGgC-K1ox5PSAulgVMf2XIEa2dOI5c9m_HnaRTSM3A7D7r7L");'
-                  ></div>
-                  <div>
-                    <p class="text-[#111518] text-base font-medium leading-normal">Cosmetic Dentistry</p>
-                    <p class="text-[#637988] text-sm font-normal leading-normal">Enhance your smile with whitening, veneers, and other cosmetic procedures.</p>
-                  </div>
-                </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZngiubBT498BF7N82wE5daCOWX8MZTUBRpxBYkPjWu_g8PM7JBUK8aFyl7XhA6a-OEwoTweaHl8zKxmN9OWAJvX34Le6ezQhlpSbvTQxYEOZaiqOEA-VcBrAD8HJpnFn5xIbX5ZYR9XcGAfwgagSRlRcDsuBySkWcfi9PhK7oM3cm5aTYFrk0q6JYdS9bQp5KKddI4f_sKSEMadNaE33Hhrsim42TDlURQVUq2fVPdopMyUG_IN2Rmf1B2QZ2oVE8GYNEP2eDlra_");'
-                  ></div>
-                  <div>
-                    <p class="text-[#111518] text-base font-medium leading-normal">Orthodontics</p>
-                    <p class="text-[#637988] text-sm font-normal leading-normal">Straighten your teeth with braces or clear aligners for a confident smile.</p>
-                  </div>
-                </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1x-nkWwaE8_Mw2H8uMigt7uC9U6TNCGsHiwqMi7NoM9ekemIZvPthQDzklax2gNYBN7M0OdRoJQg8QYm5FMg9wP0_Wg6ASxQapuXCYZVJtym0SHJGKe7aJcWbh3uNE_kduzCNvCXlW-YzzNuEEmsoWaic7mlDmvwn34_5cS_9hDjj7IhVkKiSVd0IGlWGnCNowuHyil0FOqZkNz3Z9cu2r11bY5sWgyvdHc2miLDI6QwUpx31P4QEMyo_4dP8SGWQInBFNLoUOQxV");'
-                  ></div>
-                  <div>
-                    <p class="text-[#111518] text-base font-medium leading-normal">Pediatric Dentistry</p>
-                    <p class="text-[#637988] text-sm font-normal leading-normal">Gentle and friendly dental care for children of all ages.</p>
-                  </div>
-                </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtJqglyWSdXdSgXPDlrc6NJu0WOUGLQZhlugULOyx7OhgEp9oQUR7_V3LPz4lE1LgBVlOWq3JSi0HDqjBWbUEJrJnLRIK4Vf7ZBLKGU1dDCa7--bLuA-oZP0RDiVy57ctyvszQ3T86eJiyFnMqr167plep2jxqGrUoEnkCVNvBCdBebqka2F_9kbDUoM6NNWebySCOQ_O8JCFHfuZNqENfbgbeSlOsM_EoLlvOAs661gqHDxWnZRHjbO4BKD4ac5QftK9DhYtLr-1i");'
-                  ></div>
-                  <div>
-                    <p class="text-[#111518] text-base font-medium leading-normal">Preventive Care</p>
-                    <p class="text-[#637988] text-sm font-normal leading-normal">Services like fluoride treatments and sealants to prevent cavities.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="p-4">
-              <div
-                class="bg-cover bg-center flex flex-col items-stretch justify-end rounded-xl pt-[132px] shadow-[0_0_4px_rgba(0,0,0,0.1)]"
-                style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCWxnHXqSIS448i_iAJ1Y1wCbtQv5tUcdmbjoogmHSrPzyOvcq0IDnqICYT6JxXYKM_yCuyZPxd3yOGa8CF4vciA0xLFfnGs5GshCeng1JsjIFXTudEzb37yJWSIXJ9mDwToniOFV-FFm0fkrfC4TQo1r-jTD5yBj3my8faqHMkRxqPpBP3M0V1JNY4UkXh__u3H5kms-o42OgHp7b-7sjuSAjSXjNiblExgILnR5xB8XgnGSFxH8YZe9RmXt6oBnOExk7YWA-eZSeB");'
-              >
-                <div class="flex w-full items-end justify-between gap-4 p-4">
-                  <div class="flex max-w-[440px] flex-1 flex-col gap-1">
-                    <p class="text-white tracking-light text-2xl font-bold leading-tight max-w-[440px]">Contact Us</p>
-                    <p class="text-white text-base font-medium leading-normal">
-                      Visit us at: 123 Main Street, Anytown, USA Call us at: (555) 123-4567 Email us at: info@brightsmilesdental.com
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h2 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Opening Hours</h2>
-            <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dce1e5] py-5">
-                <p class="text-[#637988] text-sm font-normal leading-normal">Monday</p>
-                <p class="text-[#111518] text-sm font-normal leading-normal">9:00 AM - 6:00 PM</p>
-              </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dce1e5] py-5">
-                <p class="text-[#637988] text-sm font-normal leading-normal">Tuesday</p>
-                <p class="text-[#111518] text-sm font-normal leading-normal">9:00 AM - 6:00 PM</p>
-              </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dce1e5] py-5">
-                <p class="text-[#637988] text-sm font-normal leading-normal">Wednesday</p>
-                <p class="text-[#111518] text-sm font-normal leading-normal">9:00 AM - 6:00 PM</p>
-              </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dce1e5] py-5">
-                <p class="text-[#637988] text-sm font-normal leading-normal">Thursday</p>
-                <p class="text-[#111518] text-sm font-normal leading-normal">9:00 AM - 6:00 PM</p>
-              </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dce1e5] py-5">
-                <p class="text-[#637988] text-sm font-normal leading-normal">Friday</p>
-                <p class="text-[#111518] text-sm font-normal leading-normal">9:00 AM - 5:00 PM</p>
-              </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dce1e5] py-5">
-                <p class="text-[#637988] text-sm font-normal leading-normal">Saturday</p>
-                <p class="text-[#111518] text-sm font-normal leading-normal">10:00 AM - 2:00 PM</p>
-              </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dce1e5] py-5">
-                <p class="text-[#637988] text-sm font-normal leading-normal">Sunday</p>
-                <p class="text-[#111518] text-sm font-normal leading-normal">Closed</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <footer class="flex justify-center">
-          <div class="flex max-w-[960px] flex-1 flex-col">
-            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#637988] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
-                <a class="text-[#637988] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
-              </div>
-              <p class="text-[#637988] text-base font-normal leading-normal">© 2024 Bright Smiles Dental. All rights reserved.</p>
-            </footer>
-          </div>
-        </footer>
+      <!-- Book Appointment Button -->
+      <a href="#booking"
+         class="ml-4 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-full shadow-md transition">
+        Book Appointment
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home"
+           class="relative flex min-h-screen flex-col justify-center items-center text-center overflow-hidden"
+           style="background-image:
+             linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+             url('https://lh3.googleusercontent.com/aida-public/AB6AXuBU5ruqfOj-UH6JvRgdFY-m9xy1FAs0ItCEEVe2jubzdOWZbWQ_zI6qeB9n6zTIN9RMo7WVC6UkhNiKYqfAi_4XO1kDunoV9CyXLHPLl9wIO-eX8HPGcZdH0eWpny6XbbvA5lKu1AVfFyH4eCkf1B1jIbGYZjesT_Gc5JFL2vv1ECk9ieqRkpTY44Mgo1Z2V8bT9rwcKsQ1IFXQSe9y3WDSsWvH5Kn-JKnRarOf5FkxTk9w_nMIpoZZmgDVHCtElF9PkkX0bDhlICFK'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-black opacity-40"></div>
+<div class="relative z-10 text-white max-w-3xl text-center">
+    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+      A Healthier Smile Begins With Us
+    </h1>
+    <p class="text-lg md:text-xl font-light text-gray-200 mb-8">
+      Experience compassionate dental care powered by innovation and delivered with precision at Bright Smiles Dental.
+    </p>
+    <a href="#booking"
+       class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium px-8 py-3 rounded-full shadow-lg transition duration-300 ease-in-out">
+      Book Your Appointment
+    </a>
+  </div>
+
+    <div id="scroll-hint" class="scroll-hint absolute bottom-10">
+      <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+        <path stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M12 5v14m0 0l-6-6m6 6l6-6" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Our Services Section -->
+<section id="services" class="bg-gray-50 py-20 px-6 md:px-10 lg:px-20">
+  <h3 class="text-4xl font-bold text-center text-gray-800 mb-16 tracking-tight">Our Services</h3>
+  <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+    
+    <!-- Service Card -->
+    <div class="bg-white rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+      <div class="h-52 bg-cover bg-center"
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4X3VVZU78mzfpX1u7Mvi9MVmi2_Eev0Na0Nj1yTD3uRX7iJ12NyfjCGc8tg7WzQNBgp0dNU_Q_SyVC7_EzdwVihRB2Ywf7wDUS6jnNwHhwaOI3TvZ6gxR0ao-DDGtKI4AtPst535Mjr2j7dZ5ps2w3v9DRzRv44pQAFW2QkkmmhQcsWvIJKBUpSXYmOSwgJQT_lm6oNOZzJB3A9wSb4gbFhwC2mn2wAbN0osJDCLNpaeswgT0EL42y4uVmQ7c6l-ld--F4eSTfuXs');">
+      </div>
+      <div class="p-6 space-y-3">
+        <h4 class="text-2xl font-semibold text-gray-900 group-hover:text-blue-600 transition">General Dentistry</h4>
+        <p class="text-gray-600 leading-relaxed text-sm">Routine check-ups, cleanings, and fillings to maintain optimal oral health for you and your family.</p>
       </div>
     </div>
-    <script>
-      // Navbar transparency on scroll
-      const navbar = document.getElementById('main-navbar');
-      function onScroll() {
-        const hero = document.getElementById('hero');
-        const navbarHeight = navbar.offsetHeight;
-        const heroBottom = hero.getBoundingClientRect().bottom;
-        if (heroBottom - navbarHeight > 0) {
-          navbar.classList.remove('navbar-solid');
-          navbar.classList.add('navbar-transparent');
-        } else {
-          navbar.classList.remove('navbar-transparent');
-          navbar.classList.add('navbar-solid');
-        }
-      }
-      window.addEventListener('scroll', onScroll);
-      onScroll();
 
-      // Make scroll-hint clickable
-      const scrollHint = document.getElementById('scroll-hint');
-      if (scrollHint) {
-        scrollHint.addEventListener('click', function() {
-          const hero = document.getElementById('hero');
-          // Scroll to just below the hero section, accounting for navbar height
-          const navbarHeight = navbar.offsetHeight;
-          const heroBottom = hero.getBoundingClientRect().bottom + window.scrollY;
-          window.scrollTo({ top: heroBottom - navbarHeight + 1, behavior: 'smooth' });
-        });
+    <!-- Repeat the card structure below for other services -->
+    
+    <!-- Cosmetic Dentistry -->
+    <div class="bg-white rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+      <div class="h-52 bg-cover bg-center"
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbhoFPwBP2xDBB54l2Fk7EtqkWyo9PM39G6jMhJaBEzuP49P6rMLC3iPYPcJ_sa6STrorsxCFaqqhPdGM5Vjdz3PVjt3MMrUXy5Spki6MAEskF_o3kIlWDvMahtr264ow0N7_s-W9-TFLrq0aHLobgtYPWA6XudviVmTWJSYLKihiMQEM9o8hf1ZhUuv1IGoYG1HPP8qGcpfDHPnkxBWYgqNMxbGdwFGgC-K1ox5PSAulgVMf2XIEa2dOI5c9m_HnaRTSM3A7D7r7L');">
+      </div>
+      <div class="p-6 space-y-3">
+        <h4 class="text-2xl font-semibold text-gray-900 group-hover:text-blue-600 transition">Cosmetic Dentistry</h4>
+        <p class="text-gray-600 leading-relaxed text-sm">Enhance your smile with professional whitening, porcelain veneers, and other aesthetic treatments.</p>
+      </div>
+    </div>
+
+    <!-- Orthodontics -->
+    <div class="bg-white rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+      <div class="h-52 bg-cover bg-center"
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZngiubBT498BF7N82wE5daCOWX8MZTUBRpxBYkPjWu_g8PM7JBUK8aFyl7XhA6a-OEwoTweaHl8zKxmN9OWAJvX34Le6ezQhlpSbvTQxYEOZaiqOEA-VcBrAD8HJpnFn5xIbX5ZYR9XcGAfwgagSRlRcDsuBySkWcfi9PhK7oM3cm5aTYFrk0q6JYdS9bQp5KKddI4f_sKSEMadNaE33Hhrsim42TDlURQVUq2fVPdopMyUG_IN2Rmf1B2QZ2oVE8GYNEP2eDlra_');">
+      </div>
+      <div class="p-6 space-y-3">
+        <h4 class="text-2xl font-semibold text-gray-900 group-hover:text-blue-600 transition">Orthodontics</h4>
+        <p class="text-gray-600 leading-relaxed text-sm">Straighten teeth and improve bites with modern braces or clear aligners, customized just for you.</p>
+      </div>
+    </div>
+
+    <!-- Pediatric Dentistry -->
+    <div class="bg-white rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+      <div class="h-52 bg-cover bg-center"
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1x-nkWwaE8_Mw2H8uMigt7uC9U6TNCGsHiwqMi7NoM9ekemIZvPthQDzklax2gNYBN7M0OdRoJQg8QYm5FMg9wP0_Wg6ASxQapuXCYZVJtym0SHJGKe7aJcWbh3uNE_kduzCNvCXlW-YzzNuEEmsoWaic7mlDmvwn34_5cS_9hDjj7IhVkKiSVd0IGlWGnCNowuHyil0FOqZkNz3Z9cu2r11bY5sWgyvdHc2miLDI6QwUpx31P4QEMyo_4dP8SGWQInBFNLoUOQxV');">
+      </div>
+      <div class="p-6 space-y-3">
+        <h4 class="text-2xl font-semibold text-gray-900 group-hover:text-blue-600 transition">Pediatric Dentistry</h4>
+        <p class="text-gray-600 leading-relaxed text-sm">Gentle, kid-friendly care from infancy through the teen years—creating positive experiences early on.</p>
+      </div>
+    </div>
+
+    <!-- Preventive Care -->
+    <div class="bg-white rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+      <div class="h-52 bg-cover bg-center"
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtJqglyWSdXdSgXPDlrc6NJu0WOUGLQZhlugULOyx7OhgEp9oQUR7_V3LPz4lE1LgBVlOWq3JSi0HDqjBWbUEJrJnLRIK4Vf7ZBLKGU1dDCa7--bLuA-oZP0RDiVy57ctyvszQ3T86eJiyFnMqr167plep2jxqGrUoEnkCVNvBCdBebqka2F_9kbDUoM6NNWebySCOQ_O8JCFHfuZNqENfbgbeSlOsM_EoLlvOAs661gqHDxWnZRHjbO4BKD4ac5QftK9DhYtLr-1i');">
+      </div>
+      <div class="p-6 space-y-3">
+        <h4 class="text-2xl font-semibold text-gray-900 group-hover:text-blue-600 transition">Preventive Care</h4>
+        <p class="text-gray-600 leading-relaxed text-sm">Fluoride treatments, sealants, and education to help you prevent cavities before they start.</p>
+      </div>
+    </div>
+
+    <!-- Advanced Imaging -->
+    <div class="bg-white rounded-3xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+      <div class="h-52 bg-cover bg-center"
+        style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ecbd4b2c599?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');">
+      </div>
+      <div class="p-6 space-y-3">
+        <h4 class="text-2xl font-semibold text-gray-900 group-hover:text-blue-600 transition">Advanced Imaging</h4>
+        <p class="text-gray-600 leading-relaxed text-sm">In-house digital X-rays and 3D imaging for precise diagnostics with minimal radiation exposure.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="bg-gradient-to-br from-blue-50 to-white py-20 px-6 md:px-10 lg:px-20">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h3 class="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">Get in Touch</h3>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+        Have questions or want to schedule a visit? Reach out and we’ll get back to you shortly.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 transition hover:shadow-2xl">
+        <form action="#" method="POST" class="space-y-6">
+          <div>
+            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+            <input type="text" id="name" name="name" required
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
+          </div>
+          <div>
+            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+            <input type="email" id="email" name="email" required
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
+          </div>
+          <div>
+            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+            <textarea id="message" name="message" rows="5" required
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full bg-blue-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-700 transition shadow-md hover:shadow-lg">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="flex flex-col justify-center space-y-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 transition hover:shadow-2xl">
+          <h4 class="text-2xl font-bold mb-4 text-blue-600 flex items-center gap-2">
+            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 10l1-2a9 9 0 0116 0l1 2M4 10v10a2 2 0 002 2h12a2 2 0 002-2V10M10 21v-6h4v6" />
+            </svg>
+            Contact Information
+          </h4>
+          <p class="mb-2"><strong>Address:</strong> 123 Main Street, Anytown, USA</p>
+          <p class="mb-2"><strong>Phone:</strong> (555) 123-4567</p>
+          <p class="mb-2"><strong>Email:</strong> info@brightsmilesdental.com</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 transition hover:shadow-2xl">
+          <h4 class="text-2xl font-bold mb-4 text-blue-600 flex items-center gap-2">
+            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2v-7H3v7a2 2 0 002 2z" />
+            </svg>
+            Opening Hours
+          </h4>
+          <ul class="space-y-2 text-gray-700">
+            <li><strong>Mon – Fri:</strong> 9:00 AM – 6:00 PM</li>
+            <li><strong>Saturday:</strong> 10:00 AM – 4:00 PM</li>
+            <li><strong>Sunday:</strong> Closed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="bg-gray-900 text-gray-300 pt-16 pb-10 px-6 md:px-12 lg:px-20">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+    
+    <!-- Clinic Info -->
+    <div>
+      <h3 class="text-white text-xl font-bold mb-4">Bright Smiles Dental</h3>
+      <p class="text-sm text-gray-400">
+        Providing compassionate and state-of-the-art dental care to help you smile brighter every day.
+      </p>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-white text-lg font-semibold mb-4">Contact</h4>
+      <ul class="space-y-2 text-sm">
+        <li><span class="font-medium text-white">Address:</span> 123 Main Street, Anytown, USA</li>
+        <li><span class="font-medium text-white">Phone:</span> (555) 123-4567</li>
+        <li><span class="font-medium text-white">Email:</span> info@brightsmilesdental.com</li>
+      </ul>
+    </div>
+
+    <!-- Opening Hours -->
+    <div>
+      <h4 class="text-white text-lg font-semibold mb-4">Opening Hours</h4>
+      <ul class="text-sm space-y-1">
+        <li><strong>Mon – Fri:</strong> 9:00 AM – 6:00 PM</li>
+        <li><strong>Saturday:</strong> 10:00 AM – 4:00 PM</li>
+        <li><strong>Sunday:</strong> Closed</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
+    © 2025 Bright Smiles Dental. All rights reserved.
+  </div>
+</footer>
+
+
+  <!-- Booking Section (anchor for Book Appointment) -->
+  <section id="booking" class="hidden"></section>
+
+  <script>
+    // Scroll hint click smooth scroll to services section
+    document.getElementById('scroll-hint').addEventListener('click', () => {
+      document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Optional: Navbar background toggle on scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('main-navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.remove('navbar-transparent');
+        navbar.classList.add('bg-white', 'bg-opacity-90', 'backdrop-blur-md', 'shadow-md');
+      } else {
+        navbar.classList.add('navbar-transparent');
+        navbar.classList.remove('bg-white', 'bg-opacity-90', 'backdrop-blur-md', 'shadow-md');
       }
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
